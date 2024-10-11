@@ -49,6 +49,9 @@ For localhost in the example above, the API server address shall look as follows
 
 A convenient way to test the API communication is by using tools like Postman or in JavaScript in a Web browser. Postman allows you to simulate API requests and examine the responses without the need for custom client software. By configuring Postman with the appropriate WebSocket settings, IP address, Port, and authentication commands, users can efficiently validate their API setup and troubleshoot any issues in the communication process. If you encounter any issues, make sure your antivirus software, VPN, browser or firewall isn't blocking WebSocket connections.  
 
-## Example Code
+## Support
 
-Check the [examples/README.md](./examples/README.md) for more details on how to run each example.
+If you have questions or need assistance with the API, please:
+
+- Open an issue in the [Issues](https://github.com/nanoanalytik/nano_analytik/issues) section of this repository.
+- Contact our support team at [support@nanoanalytik.net](mailto:support@nanoanalytik.net).
