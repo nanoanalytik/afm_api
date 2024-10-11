@@ -25,11 +25,7 @@ Before using the API, ensure you have the following:
 
 ### API Documentation
 
-<<<<<<< HEAD
-The complete API documentation is available [docs/API.md](./docs/API.md). It includes detailed information about all available endpoints, request/response formats, and example usage.
-=======
 The complete API documentation is available [docs/API.md](./docs/README.md). It includes detailed information about all available endpoints, request/response formats, and example usage.
->>>>>>> 9dad37e78002e8610dec160ae43e41081491486f
 
 ### Example Code
 
@@ -42,8 +38,4 @@ Examples include languages:
 
 Check the [examples/README.md](./examples/README.md) for more details on how to run each example.
 
-<<<<<<< HEAD
 **Note:** These examples are simplified to highlight API usage and may not include comprehensive error handling, input validation, or user interface components necessary for production applications.
-=======
-**Note:** These examples are simplified to highlight API usage and may not include comprehensive error handling, input validation, or user interface components necessary for production applications.
->>>>>>> 9dad37e78002e8610dec160ae43e41081491486f
