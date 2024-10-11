@@ -38,4 +38,9 @@ Examples include languages:
 
 Check the [examples/README.md](./examples/README.md) for more details on how to run each example.
 
-**Note:** These examples are simplified to highlight API usage and may not include comprehensive error handling, input validation, or user interface components necessary for production applications.
+## Support
+
+If you have questions or need assistance with the API, please:
+
+- Open an issue in the [Issues](https://github.com/nanoanalytik/nano_analytik/issues) section of this repository.
+- Contact our support team at [support@nanoanalytik.net](mailto:support@nanoanalytik.net).
