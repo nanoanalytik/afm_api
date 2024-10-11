@@ -5,7 +5,11 @@ Welcome to the **AFM Control by nano analytik GmbH API repository**! This reposi
 
 ## Overview
 
-Our AFM API allows developers and researchers to integrate external applications with the Atomic Force Microscope, enabling access to real-time data, control over the microscope functions, and automated measurement processes. The API supports communication through HTTP/REST protocols, making it easy to integrate with a wide range of systems.
+The API enables users to control the AFM control application remotely. This is especially useful for those who need to operate the AFM from their own host application, allowing for seamless integration with other equipment and centralized control from the host system. 
+
+Functionally, the system reacts the same way whether an operation is performed manually by a user or executed through an API command. This ensures consistent behavior and outcomes, regardless of the method used to interact with the AFM control application. 
+
+The API uses JSON (JavaScript Object Notation) commands that are sent between the AFM control app server and a client over the **WebSocket protocol**. Each API object allows specific operations, such as setting or getting values. The following sections detail the available API commands, including examples of JSON requests and the expected responses. 
 
 ## Key Features
 
