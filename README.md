@@ -1,6 +1,7 @@
-# Atomic Force Microscopy (AFM) API Documentation
 
-Welcome to the **Atomic Force Microscopy (AFM) API** repository! This repository provides comprehensive documentation and example source code to help you integrate with our AFM system using our API.
+# AFM Control API Documentation
+
+Welcome to the **AFM Control by nano analytik GmbH API repository**! This repository provides comprehensive documentation and example source code to help you integrate with our AFM system using our API.
 
 ## Overview
 
@@ -24,23 +25,17 @@ Before using the API, ensure you have the following:
 
 ### API Documentation
 
-The complete API documentation is available [here](./docs/API.md). It includes detailed information about all available endpoints, request/response formats, and example usage.
+The complete API documentation is available [docs/API.md](./docs/API.md). It includes detailed information about all available endpoints, request/response formats, and example usage.
 
 ### Example Code
 
 We have provided example code in various programming languages to demonstrate how to interact with the API. You can find these examples in the `examples/` directory.
 
-Supported languages include:
+Examples include languages:
 
 - Python
-- C++
-- JavaScript
-- MATLAB
-
-Each example demonstrates how to:
-- Authenticate with the API
-- Retrieve measurement data
-- Control the AFM's functions
-- Handle response data
+- .NET/C#
 
 Check the [examples/README.md](./examples/README.md) for more details on how to run each example.
+
+**Note:** These examples are simplified to highlight API usage and may not include comprehensive error handling, input validation, or user interface components necessary for production applications.

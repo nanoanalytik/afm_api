@@ -1,0 +1,64 @@
+﻿<Window x:Class="WebSocketClientWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WebSocketClientWPF"
+        Title="WebSocket Client" Height="400" Width="500">
+	<Grid Margin="10">
+		<!-- Define Rows -->
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<!-- Row 0: API Key -->
+			<RowDefinition Height="Auto"/>
+			<!-- Row 1: Server IP and Port -->
+			<RowDefinition Height="Auto"/>
+			<!-- Row 2: Connect and Disconnect Buttons -->
+			<RowDefinition Height="*"/>
+			<!-- Row 3: Console Log -->
+		</Grid.RowDefinitions>
+
+		<!-- Define Columns -->
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<!-- Column 0: Labels -->
+			<ColumnDefinition Width="*"/>
+			<!-- Column 1: TextBoxes -->
+			<ColumnDefinition Width="Auto"/>
+			<!-- Column 2: Second Labels -->
+			<ColumnDefinition Width="*"/>
+			<!-- Column 3: Second TextBoxes -->
+		</Grid.ColumnDefinitions>
+
+		<!-- Row 0: API Key -->
+		<Label Grid.Row="0" Grid.Column="0" Content="API Key:" VerticalAlignment="Center" Margin="0,0,5,5"/>
+		<TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Name="txtApiKey" Margin="0,0,0,5" 
+                 Text="your-afm-api-key"/>
+
+		<!-- Row 1: Server IP and Port -->
+		<Label Grid.Row="1" Grid.Column="0" Content="Server IP:" VerticalAlignment="Center" Margin="0,0,5,5"/>
+		<TextBox Grid.Row="1" Grid.Column="1" Name="txtIP" Margin="0,0,10,5" Text="127.0.0.1"/>
+		<Label Grid.Row="1" Grid.Column="2" Content="Port:" VerticalAlignment="Center" Margin="10,0,5,5"/>
+		<TextBox Grid.Row="1" Grid.Column="3" Name="txtPort" Margin="0,0,0,5" Text="1234"/>
+
+		<!-- Row 2: Connect and Disconnect Buttons -->
+		<Button Grid.Row="2" Grid.Column="1" Name="btnConnect" Content="Connect" 
+                Margin="0,0,10,5" 
+                Click="btnConnect_Click" 
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Stretch"/>
+		<Button Grid.Row="2" Grid.Column="3" Name="btnDisconnect" Content="Disconnect" 
+                Click="btnDisconnect_Click" 
+                IsEnabled="False" 
+                Margin="0,0,0,5"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Stretch"/>
+
+		<!-- Row 3: Console Log -->
+		<TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Name="txtLog" 
+                 Margin="0,10,0,0" 
+                 VerticalScrollBarVisibility="Auto" 
+                 HorizontalScrollBarVisibility="Auto" 
+                 IsReadOnly="True" 
+                 TextWrapping="Wrap" 
+                 AcceptsReturn="True"/>
+	</Grid>
+</Window>
