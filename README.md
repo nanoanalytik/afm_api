@@ -25,7 +25,7 @@ Before using the API, ensure you have the following:
 
 ### API Documentation
 
-The complete API documentation is available [docs/API.md](./docs/README.md). It includes detailed information about all available endpoints, request/response formats, and example usage.
+The complete API documentation is available [docs/README.md](./docs/README.md). It includes detailed information about all available endpoints, request/response formats, and example usage.
 
 ### Example Code
 
