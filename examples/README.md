@@ -1,7 +1,7 @@
 
 # Examples
 
-Welcome to the **Examples** section of the ** AFM Control by nano analytik GmbH API repository**. This directory contains sample code intended to demonstrate how to interact with the AFM system using our API. These examples focus on showcasing the API functionalities and are not meant to illustrate best practices in GUI programming or the development of complete client applications.
+Welcome to the **Examples** section of the **AFM Control by nano analytik GmbH API repository**. This directory contains sample code intended to demonstrate how to interact with the AFM system using our API. These examples focus on showcasing the API functionalities and are not meant to illustrate best practices in GUI programming or the development of complete client applications.
 
 ## Purpose
 
@@ -19,7 +19,7 @@ The primary goal of these examples is to help you understand how to:
 If you have questions or need assistance with the API, please:
 
 - Open an issue in the [Issues](https://github.com/nanoanalytik/nano_analytik/issues) section of this repository.
-- Contact our support team at [afm_soft@nanoanalytik.net](mailto:afm_soft@nanoanalytik.net).
+- Contact our support team at [support@nanoanalytik.net](mailto:support@nanoanalytik.net).
 
 ## License
 
