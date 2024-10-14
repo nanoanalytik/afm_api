@@ -1,3 +1,11 @@
+# API version 1.1
+
+## Change log 
+
+- Added command object “DataSubscription” to manage all data subscriptions
+- Added subscription to AFM system log
+- Added data format for raw measurement data “float”, and scientific notation for the format “txt”
+
 # Commands list
 <a name="commands-list"></a>
 
@@ -5,7 +13,7 @@ This section lists all available AFM Control objects and commands supported by A
 
 Please note that only authenticated API clients are allowed to exchange data with the AFM Control application server. 
 
-# Table of Contents
+# List of commands 
 
 - [ActionActuationFrequencySweepStart](#actionactuationfrequencysweepstart)
 - [ActionActuationFrequencySweepStop](#actionactuationfrequencysweepstop)
