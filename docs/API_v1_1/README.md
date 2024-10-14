@@ -1,4 +1,3 @@
-
 # Commands list
 <a name="commands-list"></a>
 
@@ -51,6 +50,7 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [ScannerLimitZ](#scannerlimitz)
 - [ScannerLinesPerSecond](#scannerlinespersecond)
 - [ScannerMode](#scannermode)
+- [ScannerPosition](#scannerposition)
 - [ScannerRange](#scannerrange)
 - [ScannerResolution](#scannerresolution)
 - [ScannerRotation](#scannerrotation)
@@ -629,6 +629,7 @@ set
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ActuationFrequencySweepStart",
@@ -637,6 +638,7 @@ set
 	    "value": 10000
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -656,6 +658,7 @@ set
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ActuationFrequencySweepStop",
@@ -664,6 +667,7 @@ set
 	    "value": 40000
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -683,6 +687,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ActuationHalfResonanceFrequency",
@@ -691,6 +696,7 @@ set / get
 	    "value": true
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -698,6 +704,7 @@ true, false
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ActuationHalfResonanceFrequency",
@@ -705,6 +712,7 @@ true, false
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -724,6 +732,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ActuationOutput",
@@ -732,6 +741,7 @@ set / get
 	    "value": true
 	}
 }
+```
 
 
 ### Expected SET Values
@@ -740,6 +750,7 @@ true, false
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ActuationOutput",
@@ -747,6 +758,7 @@ true, false
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -783,6 +795,7 @@ floating-point value
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "AFMAmplitudeSetPoint",
@@ -790,6 +803,7 @@ floating-point value
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -811,6 +825,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "AFMPIDConstantI",
@@ -819,6 +834,7 @@ set / get
 	    "value": 20
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -826,6 +842,7 @@ unsigned int
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "AFMPIDConstantI",
@@ -833,6 +850,7 @@ unsigned int
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -854,6 +872,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "AFMPIDConstantP",
@@ -862,6 +881,7 @@ set / get
 	    "value": 1000
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -869,6 +889,7 @@ unsigned int
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "AFMPIDConstantP",
@@ -876,6 +897,7 @@ unsigned int
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -897,6 +919,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "APIVersion",
@@ -905,6 +928,7 @@ set / get
 	    "value": "1.0"
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -912,6 +936,7 @@ String values from the list of available server API versions
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "APIVersion",
@@ -920,6 +945,7 @@ String values from the list of available server API versions
 	    "value": "current"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -931,6 +957,7 @@ Use "current", "available" for the "value" field to get the corresponding data
 
 Examplary response:
 
+```
 {
 	"command": "get",
 	"object": "APIVersion",
@@ -939,7 +966,7 @@ Examplary response:
 	    "value": "current"
 	}
 }
-
+```
 
 
 
@@ -956,16 +983,16 @@ set
 
 ## Set Example
 
+```
 {
 	"command": "authenticate",
 	"apikey": "d1f89a72-3f0b-4d57-b3a9-0f7c63a2e914"
 }
+```
 
 ## Notes
 
 Do not reveal the API-Key to unauthorized people!
-
-
 
 
 
@@ -982,22 +1009,17 @@ set / get
 
 ## Set Example
 
+```
 {
-
-	"command": "set",
-	
+	"command": "set",	
 	"object": "DataSubscription",
-	
 	"payload": {
 	    "property": "type",
 	    "type": "log",
 	    "subscription": true
-	
 	}
-
 }
-
-\#\## 
+```
 
 ### Expected SET Values
 
@@ -1005,19 +1027,15 @@ String values supported for property "type" are “line” (cross-section for ea
 
 ## Get Example
 
+```
 {
-
-	"command": "get",
-	
+	"command": "get",	
 	"object": "DataSubscription",
-	
 	"payload": {
-	
 	    "property": "value"
-	
 	}
-
 }
+```
 
 ### Expected GET Values
 
@@ -1027,52 +1045,30 @@ String “value” for "property".
 
 An exemplary response for a client, who subscribed to “line” measurement for channels 0 and 1, and to the system log messages:
 
+```
 {
-
-	"command": "response",
-	
+	"command": "response",	
 	"object": "DataSubscription",
-	
 	"payload": {
-	
 	    "subscriptions": [
-	
 	        {
-	
-	            "channel": 0,
-	
-	"format": "txt",
-	
-	            "type": "line"
-	
+			"channel": 0,
+			"format": "txt",
+			"type": "line"
 	        },
-	
 	        {
-	
-	            "channel": 1,
-	
-	"format": "txt",
-	
-	            "type": "line"
-	
+	            	"channel": 1,
+					"format": "txt",
+	            	"type": "line"
 	        },
-
-            {
-
-                "format": "txt",
-
-                "type": "log"
-
-            }
-
-
-
+		{
+			"format": "txt",
+			"type": "log"
+		}
 	    ]
-	
 	}
-
 }
-
+```
 
 
 "subscription": true subscribes to the data subscription system,   "subscription": false unsubscribes from the data subscription system.
@@ -1095,6 +1091,7 @@ get
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": " FoundResonanceProperties ",
@@ -1102,6 +1099,7 @@ get
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1111,34 +1109,22 @@ JSON structure with cantilever resonance parameters
 
 When after automatic frequency sweeping, a proper resonance is found, API returns the JSON structure as in this example:
 
+```
 {
-
-	"command": "response",
-	
+	"command": "response",	
 	"object": "FoundResonanceProperties",
-	
 	"payload": {
-	
 	    "Ivalue": 290,
-	
 	    "LITimeConstant_ms": 5.99708,
-	
 	    "Pvalue": 10,
-	
 	    "QFactor": 3926.04,
-	
 	    "peakBandwidth_Hz": 8.33739,
-	
 	    "resonanceAmplitude_V": 0.393794,
-	
 	    "resonanceFrequencyActuation_Hz": 32733.0,
-	
 	    "resonanceFrequencyVibration_Hz": 16366.5
-	
 	}
-
 } 
-
+```
 
 
 When the probe actuation is set to half-Omega (see AFM user manual and   for reference) the actuation resonance frequency is a half of actual mechanical probe resonance frequency. Based on found probe’s resonance properties, AFM Control application proposes initial P ("Pvalue") and I ("Ivalue") constants for the control tip-sample feedback loop. "LITimeConstant\_ms" indicates proposed Lock-In amplifier time constant for balanced performance in terms of response speed and noise damping.  
@@ -1157,6 +1143,7 @@ get
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "FrequencySweepStatus",
@@ -1164,6 +1151,7 @@ get
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1189,6 +1177,7 @@ get
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MeasurementData",
@@ -1199,6 +1188,7 @@ get
 	    "channel": "0"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1230,6 +1220,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "MeasurementDataActiveChannel",
@@ -1239,6 +1230,7 @@ set / get
 	    "channel": "0"
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1246,6 +1238,7 @@ unsigned int type as "value" in the SET command corresponding with the measureme
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MeasurementDataActiveChannel",
@@ -1253,6 +1246,7 @@ unsigned int type as "value" in the SET command corresponding with the measureme
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1262,7 +1256,7 @@ unsigned int for "index", string for "text"
 
 Examplary response:
 
-
+```
 {
 	"command": "response",
 	"object": "MeasurementDataActiveChannel",
@@ -1273,8 +1267,11 @@ Examplary response:
 	    }
 	}
 }
+```
 
 index 0 = "topography", index 1 = "phase"
+
+
 
 # MeasurementDataCorrectionMode
 <a name="measurementdatacorrectionmode"></a>
@@ -1289,6 +1286,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "MeasurementDataCorrectionMode",
@@ -1298,6 +1296,7 @@ set / get
 	    "channel": "1"
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1305,6 +1304,7 @@ unsigned int type as "value" in the SET command to set the corresponsdix index i
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MeasurementDataCorrectionMode",
@@ -1312,6 +1312,7 @@ unsigned int type as "value" in the SET command to set the corresponsdix index i
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1337,6 +1338,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "MeasurementDataDirectionMode",
@@ -1346,6 +1348,7 @@ set / get
 	    "channel": "1"
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1353,6 +1356,7 @@ unsigned int type as "value" in the SET command corresponding with the measureme
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MeasurementDataDirectionMode",
@@ -1360,6 +1364,7 @@ unsigned int type as "value" in the SET command corresponding with the measureme
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1369,6 +1374,7 @@ unsigned int for "index", string for "text"
 
 Examplary response: 
 
+```
 {
 	"command": "response",
 	"object": "MeasurementDataDirectionMode",
@@ -1379,6 +1385,7 @@ Examplary response:
 	    }
 	}
 }
+```
 
 index 0 = "forward", index 1 = "backward" direction
 
@@ -1395,29 +1402,19 @@ set / get
 
 ## Set Example
 
+```
 {
-
-	"command": "set",
-	
+	"command": "set",	
 	"object": "MeasurementDataSubscription",
-	
 	"payload": {
-	
 	    "property": "type",
-	
 	    "type": "line",
-	
 	    "format": "txt",
-	
 	    "channel": 0,
-	
 	    "subscription": true
-	
 	}
-
 }
-
-\#\## 
+```
 
 ### Expected SET Values
 
@@ -1426,19 +1423,15 @@ String values supported for property "type" are “line” (cross-section for ea
 
 ## Get Example
 
+```
 {
-
-	"command": "get",
-	
+	"command": "get",	
 	"object": "MeasurementDataSubscription",
-	
 	"payload": {
-	
 	    "property": "value"
-	
 	}
-
 }
+```
 
 ### Expected GET Values
 
@@ -1448,46 +1441,31 @@ String “value” for "property".
 
 An exemplary response for a client, who subscribed to “line” measurement for channels 0 and 1:
 
+```
 {
-
-	"command": "response",
-	
+	"command": "response",	
 	"object": "MeasurementDataSubscription",
-	
 	"payload": {
-	
 	    "subscriptions": [
-	
 	        {
-	
-	            "channel": 0,
-	
-	"format": "txt",
-	
-	            "type": "line"
-	
+	            	"channel": 0,
+			"format": "txt",
+	            	"type": "line"
 	        },
-	
 	        {
-	
-	            "channel": 1,
-	
-	"format": "txt",
-	
-	            "type": "line"
-	
+	            	"channel": 1,
+			"format": "txt",
+	            	"type": "line"
 	        }
-	
 	    ]
-	
 	}
-
 }
-
+```
 
 
 Each line data response consists of the JSON structure as follows:
 
+```
 {
 	"command": "response",	
 	"object": "MeasurementDataSubscription",
@@ -1506,6 +1484,7 @@ Each line data response consists of the JSON structure as follows:
 		}
 	}
 }
+```
 
 
 In the “value” structure, there are 3 sets of floating-point data for x ("x") position in µm, measured signals in forward ("y\_forward") and backward ("y\_backward") direction.  The length of each vector corresponds to the ScannerResolution setting; when set to 128x128, the data vector is 128 data-point long.  Property “y\_position” show the integer value of pixel position in Y direction. Y position pixel value is between 0 and scan resolution – 1. Due to the limited refresh rate of the scan lines, some measurement lines may be omitted for display, when scanning in high speed \> 2 lines/second, but they are recorded in the measurement data.  
@@ -1526,6 +1505,7 @@ get
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MeasurementStatus",
@@ -1533,6 +1513,7 @@ get
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1573,6 +1554,7 @@ unsigned int
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MotorApproachMode",
@@ -1580,6 +1562,7 @@ unsigned int
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1604,6 +1587,7 @@ get
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": " MotorPosition",
@@ -1611,6 +1595,7 @@ get
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1620,24 +1605,17 @@ float type in micrometers for "value", string value for “reliability” proper
 
 Exemplary response for the position just after starting the application. In this case, similarly to the ScannerPosition, AFM system has not reached the tip-sample contact to determine the motor position as reliable. 
 
+```
 {
-
-    "command": "response",
-
-    "object": "MotorPosition",
-
-    "payload": {
-
-        "reference": "",
-
-        "reliability": "unreliable",
-
-        "value": 0
-
-    }
-
+	"command": "response",
+	"object": "MotorPosition",
+	"payload": {
+		"reference": "",
+		"reliability": "unreliable",
+		"value": 0
+	}
 }
-
+```
 
 # MotorSpeed
 <a name="motorspeed"></a>
@@ -1652,6 +1630,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "MotorSpeed",
@@ -1660,6 +1639,7 @@ set / get
 	    "value": 500
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1667,6 +1647,7 @@ float type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MotorSpeed",
@@ -1674,6 +1655,7 @@ float type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1699,6 +1681,7 @@ get
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "MotorStatus",
@@ -1706,6 +1689,7 @@ get
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1731,6 +1715,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerCenterX",
@@ -1739,6 +1724,7 @@ set / get
 	    "value": 12.3456
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1746,6 +1732,7 @@ float type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerCenterX",
@@ -1753,6 +1740,7 @@ float type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1774,6 +1762,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerCenterY",
@@ -1782,6 +1771,7 @@ set / get
 	    "value": 7.6543
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1789,6 +1779,7 @@ float type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerCenterY",
@@ -1796,6 +1787,7 @@ float type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1817,6 +1809,7 @@ get
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerDeflectionZ",
@@ -1824,6 +1817,7 @@ get
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1849,6 +1843,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerLimitZ",
@@ -1857,6 +1852,7 @@ set / get
 	    "value": 50.21
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1864,6 +1860,7 @@ float type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerLimitZ",
@@ -1871,6 +1868,7 @@ float type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1896,6 +1894,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerLinesPerSecond",
@@ -1904,6 +1903,7 @@ set / get
 	    "value": 2.5
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1911,6 +1911,7 @@ float type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerLinesPerSecond",
@@ -1918,6 +1919,7 @@ float type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1943,6 +1945,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerMode",
@@ -1951,6 +1954,7 @@ set / get
 	    "value": 1
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -1958,6 +1962,7 @@ unsigned int type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerMode",
@@ -1965,6 +1970,7 @@ unsigned int type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -1974,8 +1980,7 @@ unsigned int for "index", string for "text"
 
 index 0 = "signle frame", index 1 = "continuous" measurements
 
-\# 
-ScannerPosition
+# ScannerPosition
 
 ## Description
 
@@ -1986,6 +1991,7 @@ Return tip-sample distance with reliability status
 get
 
 ## Get Example
+
 
 {
 	"command": "get",
@@ -2003,22 +2009,16 @@ float type in micrometers for "value", string value for “reliability” proper
 
 Exemplary response for the position just after starting the application. In this case, AFM system has not reached the tip-sample contact to determine the scanner position as reliable. 
 
+```
 {
-
-	"command": "response",
-	
+	"command": "response",	
 	"object": "ScannerPosition",
-	
 	"payload": {
-	
 	    "reliability": "unreliable",
-	
 	    "value": 8162.79
-	
 	}
-
 }
-
+```
 
 
 
@@ -2035,6 +2035,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerRange",
@@ -2043,6 +2044,7 @@ set / get
 	    "value": 10.9977
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -2050,6 +2052,7 @@ float type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerRange",
@@ -2057,6 +2060,7 @@ float type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -2082,6 +2086,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerResolution",
@@ -2090,6 +2095,7 @@ set / get
 	    "value": 1
 	}
 }
+```
 
 ### Expected SET Values
 
@@ -2097,6 +2103,7 @@ unsigned int type as "value" in the SET command
 
 ## Get Example
 
+```
 {
 	"command": "get",
 	"object": "ScannerResolution",
@@ -2104,6 +2111,7 @@ unsigned int type as "value" in the SET command
 	    "property": "value"
 	}
 }
+```
 
 ### Expected GET Values
 
@@ -2113,6 +2121,7 @@ unsigned int for "index", string for "text"
 
 Exemplary response:
 
+```
 {
 	"command": "response",
 	"object": "ScannerResolution",
@@ -2123,6 +2132,7 @@ Exemplary response:
 	    }
 	}
 }
+```
 
 The returned index is the position in the available resolution colletion and the corresponding resolution in pixels
 
@@ -2140,6 +2150,7 @@ set / get
 
 ## Set Example
 
+```
 {
 	"command": "set",
 	"object": "ScannerRotation",
@@ -2148,6 +2159,7 @@ set / get
 	    "value": 12.34
 	}
 }
+```
 
 ### Expected SET Values
 
