@@ -27,7 +27,7 @@ The API uses JSON (JavaScript Object Notation) commands that are sent between th
 Before using the API, ensure you have the following:
 
 - nano analytik AFM system compatible with the API.
-- AFM Control application versioned at least 2.0.0
+- AFM Control application with version at least 2.0.0
 - Authentication credentials (API key) provided by nano analytik GmbH.
 - An Ethernet/Internet connection to access the AFM system over the network.
 
