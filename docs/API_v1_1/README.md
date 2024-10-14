@@ -42,6 +42,7 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [MeasurementDataSubscription](#measurementdatasubscription)
 - [MeasurementStatus](#measurementstatus)
 - [MotorApproachMode](#motorapproachmode)
+- [MotorPosition](#motorposition)
 - [MotorSpeed](#motorspeed)
 - [MotorStatus](#motorstatus)
 - [ScannerCenterX](#scannercenterx)
@@ -1616,6 +1617,50 @@ Exemplary response for the position just after starting the application. In this
 	}
 }
 ```
+
+# MotorPosition
+<a name="motorposition"></a>
+
+## Description
+
+Coarse motor Z position
+
+## Set/Get Information
+
+get
+
+## Get Example
+
+```
+{
+    "command": "get",
+    "object": "MotorPosition",
+    "payload": {
+        "property": "value"
+    }
+}
+```
+
+### Expected GET Values
+
+float type as "value" in the GET response
+
+## Notes
+
+Exemplary response for the position just after starting the application. In this case, AFM system has not reached the tip-sample contact to determine the motor position as reliable. Therefore the "reliability" property is set to "unreliable"
+
+```
+{
+    "command": "response",
+    "object": "MotorPosition",
+    "payload": {
+        "reference": "",
+        "reliability": "unreliable",
+        "value": 0
+    }
+}
+```
+
 
 # MotorSpeed
 <a name="motorspeed"></a>
