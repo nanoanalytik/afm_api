@@ -12,6 +12,8 @@ Functionally, the system reacts the same way whether an operation is performed m
 
 The API uses JSON (JavaScript Object Notation) commands that are sent between the AFM control app server and a client over the **WebSocket protocol**. Each API object allows specific operations, such as setting or getting values. The following sections detail the available API commands, including examples of JSON requests and the expected responses. 
 
+![AFM Diagram](./docs/api_diagram.png)
+
 ## Key Features
 
 - **Real-time data access**: Obtain high-precision measurement data from the AFM in real time.
