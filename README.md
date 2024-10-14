@@ -1,3 +1,4 @@
+<img src="https://www.nanoanalytik.net/wp-content/themes/nanoanalytik/img/Logo_nav.svg" alt="nano analytik logo" width="250">
 
 # AFM Control API Documentation
 
