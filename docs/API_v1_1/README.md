@@ -1,6 +1,13 @@
+
+# Commands list
+<a name="commands-list"></a>
+
+This section lists all available AFM Control objects and commands supported by API version 1.0 in alphabetical order. Each chapter describes a given object name, a short function description, and provides exemplary API commands and responses. API users are free to compose sequences of commands. It is also recommended to experiment with API server operation using tools like Postman or Python scripts to fine-tune the AFM system to the particular AFM applications. 
+
+Please note that only authenticated API clients are allowed to exchange data with the AFM Control application server. 
+
 # Table of Contents
 
-- [Commands list](#commands-list)
 - [ActionActuationFrequencySweepStart](#actionactuationfrequencysweepstart)
 - [ActionActuationFrequencySweepStop](#actionactuationfrequencysweepstop)
 - [ActionAddMeasurementChannel](#actionaddmeasurementchannel)
@@ -48,12 +55,6 @@
 - [ScannerResolution](#scannerresolution)
 - [ScannerRotation](#scannerrotation)
 
-# Commands list
-<a name="commands-list"></a>
-
-This section lists all available AFM Control objects and commands supported by API version 1.0 in alphabetical order. Each chapter describes a given object name, a short function description, and provides exemplary API commands and responses. API users are free to compose sequences of commands. It is also recommended to experiment with API server operation using tools like Postman or Python scripts to fine-tune the AFM system to the particular AFM applications. 
-
-Please note that only authenticated API clients are allowed to exchange data with the AFM Control application server. 
 
 # ActionActuationFrequencySweepStart
 <a name="actionactuationfrequencysweepstart"></a>
