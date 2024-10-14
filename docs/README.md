@@ -1,6 +1,6 @@
 <img src="https://www.nanoanalytik.net/wp-content/themes/nanoanalytik/img/Logo_nav.svg" alt="nano analytik logo" width="250">
 
-# Atomic Force Microscopy (AFM) API Documentation
+# Atomic Force Microscope (AFM) API Documentation
 
 Welcome to the documentation of **AFM Control API**! It will help you integrate your software with our AFM system.
 
