@@ -40,21 +40,21 @@ Server Port: 1234
 
 ## Example Output
 
-### ✅ Valid API Key:
+### Successful Connection - Valid API Key:
 ```
 WebSocket connected  
 Server replied: {"command":"response", "object":"Authenticated", "payload":{"message":"OK"}}  
 Disconnected.
 ```
 
-### ❌ Invalid API Key:
+### Successful Connection Invalid API Key:
 ```
 WebSocket connected.  
 Server replied: {"command":"error","payload":{"details":"Invalid API key","title":"Unauthorized"}}  
 Disconnected.
 ```
 
-### ⚠️ Connection Failure (e.g. server not running or wrong IP/port):
+### Connection Failure (e.g. server not running or wrong IP/port):
 ```
 Handshake failed: 12029
 ```
@@ -63,10 +63,5 @@ Handshake failed: 12029
 
 ## Requirements
 - Windows with Visual Studio 2022
-- Internet access to reach the AFMControl API server
-- A valid API Key
+- A valid AFM Control Server API Key
 
----
-
-## License
-MIT (or specify your project's license)
