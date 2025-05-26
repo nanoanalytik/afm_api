@@ -1,3 +1,4 @@
+<img src="https://www.nanoanalytik.net/wp-content/themes/nanoanalytik/img/Logo_nav.svg" alt="nano analytik logo" width="250">
 
 # AFM Control API Documentation
 
@@ -10,6 +11,8 @@ The API enables users to control the AFM control application remotely. This is e
 Functionally, the system reacts the same way whether an operation is performed manually by a user or executed through an API command. This ensures consistent behavior and outcomes, regardless of the method used to interact with the AFM control application. 
 
 The API uses JSON (JavaScript Object Notation) commands that are sent between the AFM control app server and a client over the **WebSocket protocol**. Each API object allows specific operations, such as setting or getting values. The following sections detail the available API commands, including examples of JSON requests and the expected responses. 
+
+![AFM Diagram](./docs/api_diagram.png)
 
 ## Key Features
 
@@ -24,8 +27,9 @@ The API uses JSON (JavaScript Object Notation) commands that are sent between th
 Before using the API, ensure you have the following:
 
 - nano analytik AFM system compatible with the API.
-- Authentication credentials (API key) provided by your system administrator.
-- An internet connection to access the AFM system over the network.
+- AFM Control application with version at least 2.0.0
+- Authentication credentials (API key) provided by nano analytik GmbH.
+- An Ethernet/Internet connection to access the AFM system over the network.
 
 ### API Documentation
 
