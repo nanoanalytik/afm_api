@@ -1100,7 +1100,7 @@ An exemplary response for a client, who subscribed to “line” measurement for
 	        },
 	        {
 	            	"channel": 1,
-					"format": "txt",
+			"format": "txt",
 	            	"type": "line"
 	        },
 		{
