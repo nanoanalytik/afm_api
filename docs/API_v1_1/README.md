@@ -948,6 +948,10 @@ Send server echo response to the client
 
 The server replys with the same "property" value as received from the client.
 
+## Notes
+
+APIEcho command is available from AFM Control App v2.1.5
+
 # APIVersion
 <a name="apiversion"></a>
 
