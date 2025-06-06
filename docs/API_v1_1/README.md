@@ -5,6 +5,7 @@
 - Added command object “DataSubscription” to manage all data subscriptions
 - Added subscription to AFM system log
 - Added data format for raw measurement data “float”, and scientific notation for the format “txt”
+- Adde APIEcho command for communication testing
 
 # Commands list
 <a name="commands-list"></a>
@@ -38,6 +39,7 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [AFMAmplitudeSetPoint](#afmamplitudesetpoint)
 - [AFMPIDConstantI](#afmpidconstanti)
 - [AFMPIDConstantP](#afmpidconstantp)
+- [APIEcho](#apiecho)
 - [APIVersion](#apiversion)
 - [authenticate](#authenticate)
 - [DataSubscription](#datasubscription)
@@ -913,7 +915,38 @@ unsigned int
 unsigned int
 
 
+# APIEcho
+<a name="apiecho"></a>
 
+## Description
+
+Send server echo response to the client
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "APIEcho",
+	"payload": {
+	    "property": "hello world"
+	}
+}
+```
+
+### Expected Response
+
+```
+{
+	"command": "response",
+	"object": "APIEcho",
+	"payload": {
+	    "property": "hello world"
+	}
+}
+```
+
+The server replys with the same "property" value as received from the client.
 
 # APIVersion
 <a name="apiversion"></a>
