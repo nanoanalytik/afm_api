@@ -43,6 +43,7 @@ Examples include languages:
 
 - Python
 - .NET/C#
+- C++
 
 Check the [examples/README.md](./examples/README.md) for more details on how to run each example.
 
