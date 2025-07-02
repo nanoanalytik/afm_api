@@ -2027,7 +2027,7 @@ The higher value, the faster measurement is carried out, but the quality of meas
 
 ## Description
 
-Scan mode
+Scan mode: 2D mapping or profile measurements.
 
 ## Set/Get Information
 
@@ -2068,7 +2068,7 @@ unsigned int for "index", string for "text"
 
 ## Notes
 
-index 0 = "signle frame", index 1 = "continuous" measurements
+index = 0 = "signle frame" single 2D mapping scan; index = 1 = "continuous" 2D mapping; index = 2 = "profile" measurement 
 
 # ScannerPosition
 
