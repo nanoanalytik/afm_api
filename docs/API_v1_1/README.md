@@ -62,6 +62,9 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [ScannerLinesPerSecond](#scannerlinespersecond)
 - [ScannerMode](#scannermode)
 - [ScannerPosition](#scannerposition)
+- [ScannerProfileLine](#scannerprofileline)
+- [ScannerProfileLineRepetition](#scannerprofilelinerepetitions)
+- [ScannerProfileLineLock](#scannerprofilelinelock)
 - [ScannerRange](#scannerrange)
 - [ScannerResolution](#scannerresolution)
 - [ScannerRotation](#scannerrotation)
@@ -2071,6 +2074,7 @@ unsigned int for "index", string for "text"
 index = 0 = "signle frame" single 2D mapping scan; index = 1 = "continuous" 2D mapping; index = 2 = "profile" measurement 
 
 # ScannerPosition
+<a name="scannerposition"></a>
 
 ## Description
 
@@ -2110,6 +2114,151 @@ Exemplary response for the position just after starting the application. In this
 }
 ```
 
+# ScannerProfileLine
+<a name="scannerprofileline"></a>
+
+## Description
+
+Selected line for profile measurement. The selected line is in range of 1 to the selected pixel resolution. 
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+    "command": "set",
+    "object": "ScannerProfileLine",
+    "payload": {
+        "property": "value",
+        "value": 24
+    }
+}
+```
+
+### Expected SET Values
+
+integet type as "value" in the SET command
+
+## Get Example
+
+```
+{
+    "command": "get",
+    "object": "ScannerProfileLine",
+    "payload": {
+        "property": "value"
+    }
+}
+```
+
+### Expected GET Values
+
+integer type as "value" in the GET response
+
+## Notes
+
+The maximum selected line is the resolution of the scanner. For example, if the selected scanner resolution is 256x256, the maximum selected line is 256. 
+
+
+# ScannerProfileLineRepetition
+<a name="scannerprofilelinerepetitions"></a>
+
+## Description
+
+Number of profile line repetitions. The maximum number of repetitions is in range of 1 to the selected pixel resolution. 
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+    "command": "set",
+    "object": "ScannerProfileLineRepetitions",
+    "payload": {
+        "property": "value",
+        "value": 8
+    }
+}
+```
+
+### Expected SET Values
+
+integet type as "value" in the SET command
+
+## Get Example
+
+```
+{
+    "command": "get",
+    "object": "ScannerProfileLineLock",
+    "payload": {
+        "property": "value"
+    }
+}
+```
+
+### Expected GET Values
+
+integer type as "value" in the GET response
+
+## Notes
+
+The maximum profile line repetition number is the resolution of the scanner. For example, if the selected scanner resolution is 256x256, the maximum repetitions are 256. 
+
+
+# ScannerProfileLineLock
+<a name="scannerprofilelinelock"></a>
+
+## Description
+
+Lock for the selected profile line. If this option is true, the selected profile line will be kept until new selected line is explicitly set. 
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+    "command": "set",
+    "object": "ScannerProfileLineLock",
+    "payload": {
+        "property": "state",
+        "value": true
+    }
+}
+```
+
+### Expected SET Values
+
+bool type (true, false) as "value" in the SET command
+
+## Get Example
+
+```
+{
+    "command": "get",
+    "object": "ScannerProfileLineLock",
+    "payload": {
+        "property": "value"
+    }
+}
+```
+
+### Expected GET Values
+
+bool type (true, false) as "value" in the GET response
+
+## Notes
+
+Selected profile line lock prevent from accidental selecting a line for profile measurement, and allows keeping the same selected line between several 2D mapping scans. 
 
 
 # ScannerRange
