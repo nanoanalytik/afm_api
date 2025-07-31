@@ -2071,7 +2071,9 @@ unsigned int for "index", string for "text"
 
 ## Notes
 
-index = 0 = "signle frame" single 2D mapping scan; index = 1 = "continuous" 2D mapping; index = 2 = "profile" measurement 
+index = 0 = "Single scan" single 2D mapping scan; index = 1 = "Continuous scanning"; index = 2 = "Profile from navigation"; index = 3 = "Profile from scan". 
+
+"Profile from navigation" takes the position of the profile from the current navigation position. "Profile from scan" takes the position of the profile from the given line number of the current scanner position in the "scan" mode.
 
 # ScannerPosition
 <a name="scannerposition"></a>
