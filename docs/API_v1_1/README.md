@@ -61,7 +61,7 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [ScannerLimitZ](#scannerlimitz)
 - [ScannerLinesPerSecond](#scannerlinespersecond)
 - [ScannerMode](#scannermode)
-- [ScannerPosition](#scannerposition)
+- [ScannerTipDistance](#scannertipdistance)
 - [ScannerProfileLine](#scannerprofileline)
 - [ScannerProfileLineRepetition](#scannerprofilelinerepetitions)
 - [ScannerProfileLineLock](#scannerprofilelinelock)
@@ -2075,8 +2075,8 @@ index = 0 = "Single scan" single 2D mapping scan; index = 1 = "Continuous scanni
 
 "Profile from navigation" takes the position of the profile from the current navigation position. "Profile from scan" takes the position of the profile from the given line number of the current scanner position in the "scan" mode.
 
-# ScannerPosition
-<a name="scannerposition"></a>
+# ScannerTipDistance
+<a name="scannertipdistance"></a>
 
 ## Description
 
@@ -2091,7 +2091,7 @@ get
 
 {
 	"command": "get",
-	"object": "ScannerPosition",
+	"object": "ScannerTipDistance",
 	"payload": {
 	    "property": "value"
 	}
@@ -2108,7 +2108,7 @@ Exemplary response for the position just after starting the application. In this
 ```
 {
 	"command": "response",	
-	"object": "ScannerPosition",
+	"object": "ScannerTipDistance",
 	"payload": {
 	    "reliability": "unreliable",
 	    "value": 8162.79
