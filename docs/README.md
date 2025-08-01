@@ -10,8 +10,7 @@ Otherwise stated, higher versions of AFM Control API are backward compatible.
 
 ### v1.1
 
-**API version 1.1** used in 
- - AFM Control version 2.1.4
+**API version 1.1** used from
  - AFM Control version 2.0.2
 
 ### v1.0
