@@ -61,6 +61,9 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [ScannerLimitZ](#scannerlimitz)
 - [ScannerLinesPerSecond](#scannerlinespersecond)
 - [ScannerMode](#scannermode)
+- [ScannerNavigationModeScan](#scannernavigationmodescan)
+- [ScannerNavigationModeProfile](#scannernavigationmodeprofile)
+- [ScannerNavigationModePoint](#scannernavigationmodepoint)
 - [ScannerTipDistance](#scannertipdistance)
 - [ScannerProfileLine](#scannerprofileline)
 - [ScannerProfileLineRepetition](#scannerprofilelinerepetitions)
@@ -2074,6 +2077,164 @@ unsigned int for "index", string for "text"
 index = 0 = "Single scan" single 2D mapping scan; index = 1 = "Continuous scanning"; index = 2 = "Profile from navigation"; index = 3 = "Profile from scan". 
 
 "Profile from navigation" takes the position of the profile from the current navigation position. "Profile from scan" takes the position of the profile from the given line number of the current scanner position in the "scan" mode.
+
+
+# ScannerNavigationModeScan
+<a name="scannernavigationmodescan"></a>
+
+## Description
+
+Switch on/off the scanner navigation mode "scan"
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "ScannerNavigationModeScan",
+	"payload": {
+	    "property": "triggered",
+	    "value": true
+	}
+}
+```
+
+
+### Expected SET Values
+
+true, false
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "ScannerNavigationModeScan",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+true, false
+
+## Notes
+
+Only one scanner navigation mode can be set at the same time. If another scanner navigation mode is set, the current one will be reset. 
+
+The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
+
+
+# ScannerNavigationModeProfile
+<a name="scannernavigationmodeprofile"></a>
+
+## Description
+
+Switch on/off the scanner navigation mode "profile"
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "ScannerNavigationModeProfile",
+	"payload": {
+	    "property": "triggered",
+	    "value": true
+	}
+}
+```
+
+
+### Expected SET Values
+
+true, false
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "ScannerNavigationModeProfile",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+true, false
+
+## Notes
+
+Only one scanner navigation mode can be set at the same time. If another scanner navigation mode is set, the current one will be reset. 
+
+The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
+
+
+# ScannerNavigationModePoint
+<a name="scannernavigationmodepoint"></a>
+
+
+## Description
+
+Switch on/off the scanner navigation mode "point"
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "ScannerNavigationModePoint",
+	"payload": {
+	    "property": "triggered",
+	    "value": true
+	}
+}
+```
+
+
+### Expected SET Values
+
+true, false
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "ScannerNavigationModePoint",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+true, false
+
+## Notes
+
+Only one scanner navigation mode can be set at the same time. If another scanner navigation mode is set, the current one will be reset. 
+
+The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
+
 
 # ScannerTipDistance
 <a name="scannertipdistance"></a>
