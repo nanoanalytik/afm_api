@@ -2130,6 +2130,8 @@ Only one scanner navigation mode can be set at the same time. If another scanner
 
 The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
 
+API command available from API Control Applicaion version 2.2.1.
+
 
 # ScannerNavigationModeProfile
 <a name="scannernavigationmodeprofile"></a>
@@ -2182,6 +2184,7 @@ Only one scanner navigation mode can be set at the same time. If another scanner
 
 The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
 
+API command available from API Control Applicaion version 2.2.1.
 
 # ScannerNavigationModePoint
 <a name="scannernavigationmodepoint"></a>
@@ -2234,6 +2237,8 @@ true, false
 Only one scanner navigation mode can be set at the same time. If another scanner navigation mode is set, the current one will be reset. 
 
 The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
+
+API command available from API Control Applicaion version 2.2.1.
 
 
 # ScannerTipDistance
