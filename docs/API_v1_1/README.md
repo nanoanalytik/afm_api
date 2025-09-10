@@ -39,6 +39,7 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [AFMAmplitudeSetPoint](#afmamplitudesetpoint)
 - [AFMPIDConstantI](#afmpidconstanti)
 - [AFMPIDConstantP](#afmpidconstantp)
+- [AFMRegister](#afmregister)
 - [APIEcho](#apiecho)
 - [APIVersion](#apiversion)
 - [authenticate](#authenticate)
@@ -919,6 +920,228 @@ unsigned int
 ### Expected GET Values
 
 unsigned int
+
+# AFMRegister
+<a name="afmregister"></a>
+
+
+# AFMRegister
+
+> **⚠️Expert-only command**  
+> This endpoint directly manipulates low-level FPGA registers and can interfere with active scans, motion control, or safety interlocks. **Use only if you’re an expert user and _after_ consulting nano analytik support.** Misuse may lead to device instability or damage.
+
+**Description**  
+Read and write FPGA registers by address (enum name or numeric). Supports masked writes and an optional “priority” mode that can bypass normal access arbitration.
+
+**Set/Get Information**  
+`set / get`
+
+---
+
+## Set Examples
+
+### 1) Unmasked write (normal)
+```json
+{
+  "command": "set",
+  "object": "AFMRegister",
+  "payload": {
+    "property": "value",
+    "address": "PID_1_Kp",
+    "value": 1500
+  }
+}
+```
+
+### 2) Masked write (normal)
+```json
+{
+  "command": "set",
+  "object": "AFMRegister",
+  "payload": {
+    "property": "value",
+    "address": "PID_1_Kp",
+    "mask": "0x000000FF",
+    "value": 1500
+  }
+}
+```
+
+### 3) Priority write (bypass arbitration; **dangerous**)
+```json
+{
+  "command": "set",
+  "object": "AFMRegister",
+  "payload": {
+    "property": "value",
+    "address": "PID_1_Kp",
+    "value": 1500,
+    "forceBypass": true
+  }
+}
+```
+
+> **Notes**
+> - `forceBypass: true` attempts a DEBUG/BYPASS write if normal/locked access fails. Use with extreme caution.  
+> - `takeGlobalWriteLock: true` requests a temporary global write lock. If it cannot be obtained **and** `forceBypass` is not set, the write is rejected.
+
+---
+
+## Expected SET Values
+
+- **property**: must be `"value"`.
+- **address**: register identifier; one of:
+  - Enum name (e.g., `"PID_1_Kp"`), or
+  - Number (e.g., `98`), or
+  - Hex string (e.g., `"0x0062"`).
+- **value**: number to write:
+  - Integer, hex string (`"0x..."`), or boolean (`true`→1, `false`→0).
+- **mask** (optional, uint32):  
+  When present, only the 1-bits in `mask` are written. Effective write:
+  ```
+  newValue = (oldValue & ~mask) | (value & mask)
+  ```
+- **takeGlobalWriteLock** (optional, bool; default `false`):  
+  Attempts to acquire a temporary global write lock before writing.
+- **forceBypass** (optional, bool; default `false`):  
+  If locking fails, force a DEBUG/BYPASS write. May override other writers.
+
+---
+
+## SET Responses
+
+### Unmasked SET (normal/priority)
+```json
+{
+  "command": "response",
+  "object": "AFMRegister",
+  "payload": {
+    "address": 98,
+    "addressName": "PID_1_Kp",
+    "written": 1500,
+    "value": 1500,
+    "valueHex": "0X05DC"
+  }
+}
+```
+- `written`: the value requested by the client.
+- `value` / `valueHex`: read-back after write.
+
+### Masked SET
+```json
+{
+  "command": "response",
+  "object": "AFMRegister",
+  "payload": {
+    "address": 98,
+    "addressName": "PID_1_Kp",
+    "mask": 255,
+    "value": 476,
+    "valueHex": "0X01DC"
+  }
+}
+```
+- `mask` is echoed.
+- `value` / `valueHex` reflect the register content **after** applying the mask and completing the write.
+- (For masked writes we do **not** include `written`; the authoritative result is the read-back.)
+
+---
+
+## Get Example
+
+```json
+{
+  "command": "get",
+  "object": "AFMRegister",
+  "payload": {
+    "property": "value",
+    "address": "PID_1_Kp"
+  }
+}
+```
+
+## Expected GET Values
+
+- **property**: `"value"`
+- **address**: same rules as in SET (enum name / number / hex string)
+
+**GET Response**
+```json
+{
+  "command": "response",
+  "object": "AFMRegister",
+  "payload": {
+    "address": 98,
+    "addressName": "PID_1_Kp",
+    "value": 476,
+    "valueHex": "0X01DC"
+  }
+}
+```
+
+---
+
+## Notes
+
+### Addressing
+- Addresses map to available `RegisterAdresses`. You may use the enum name or the numeric/hex address.
+
+### Mask semantics (SET)
+- With `mask`, only masked bits are updated:
+  ```
+  newValue = (oldValue & ~mask) | (value & mask)
+  ```
+- Read-back (`value`/`valueHex`) is taken after the write completes.
+
+### Priority mode
+- `takeGlobalWriteLock: true` asks the controller to block other writers temporarily. If the lock is not available and `forceBypass` is **not** set, the SET fails with a lock error.
+- `forceBypass: true` performs the write via a DEBUG/BYPASS path when normal permission checks would deny it. This can override other writers and ongoing operations—use only in exceptional cases and preferably after support guidance.
+
+### Typical error responses
+- Invalid address/value:
+  ```json
+  {
+    "command": "error",
+    "payload": {
+      "title": "Invalid address",
+      "details": "Cannot resolve: PID_1_Kpx"
+    }
+  }
+  ```
+- Permission/lock denied:
+  ```json
+  {
+    "command": "error",
+    "payload": {
+      "title": "FPGA access error",
+      "details": "writeAfmRegister(): Permission denied for Reg 0x62; ADDR=0X0062, NAME=PID_1_KP, VALUE=0X000005DC, MASK=0XFFFFFFFF"
+    }
+  }
+  ```
+- Hardware unavailable:
+  ```json
+  {
+    "command": "error",
+    "payload": {
+      "title": "Hardware unavailable",
+      "details": "FPGAComm instance not available"
+    }
+  }
+  ```
+
+### Return fields
+- `address`: numeric register address.  
+- `addressName`: enum name (when available).  
+- `value`: current register content after operation (read-back).  
+- `valueHex`: uppercase hex string of `value`.  
+- `mask` (masked writes only): mask used.  
+- `written` (unmasked writes only): the client’s requested value.
+
+---
+
+## Support
+
+If you are unsure which registers to use or whether priority mode is appropriate for your setup, **do not proceed**. Contact **nano analytik** support for guidance before using this command.
 
 
 # APIEcho
