@@ -924,16 +924,13 @@ unsigned int
 # AFMRegister
 <a name="afmregister"></a>
 
-
-# AFMRegister
-
 > **⚠️Expert-only command**  
 > This endpoint directly manipulates low-level FPGA registers and can interfere with active scans, motion control, or safety interlocks. **Use only if you’re an expert user and _after_ consulting nano analytik support.** Misuse may lead to device instability or damage.
 
-**Description**  
+##Description  
 Read and write FPGA registers by address (enum name or numeric). Supports masked writes and an optional “priority” mode that can bypass normal access arbitration.
 
-**Set/Get Information**  
+## Set/Get Information  
 `set / get`
 
 ---
@@ -981,13 +978,13 @@ Read and write FPGA registers by address (enum name or numeric). Supports masked
 }
 ```
 
-> **Notes**
+> ## Notes
 > - `forceBypass: true` attempts a DEBUG/BYPASS write if normal/locked access fails. Use with extreme caution.  
 > - `takeGlobalWriteLock: true` requests a temporary global write lock. If it cannot be obtained **and** `forceBypass` is not set, the write is rejected.
 
 ---
 
-## Expected SET Values
+### Expected SET Values
 
 - **property**: must be `"value"`.
 - **address**: register identifier; one of:
