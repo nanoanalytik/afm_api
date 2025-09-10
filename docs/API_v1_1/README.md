@@ -1138,6 +1138,8 @@ Read and write FPGA registers by address (enum name or numeric). Supports masked
 
 ## Support
 
+`AFMRegister` command available from AFMControl App version 2.2.2.
+
 If you are unsure which registers to use or whether priority mode is appropriate for your setup, **do not proceed**. Contact **nano analytik** support for guidance before using this command.
 
 
