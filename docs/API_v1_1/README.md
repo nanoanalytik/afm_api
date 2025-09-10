@@ -927,7 +927,7 @@ unsigned int
 > **⚠️Expert-only command**  
 > This endpoint directly manipulates low-level FPGA registers and can interfere with active scans, motion control, or safety interlocks. **Use only if you’re an expert user and _after_ consulting nano analytik support.** Misuse may lead to device instability or damage.
 
-##Description  
+## Description  
 Read and write FPGA registers by address (enum name or numeric). Supports masked writes and an optional “priority” mode that can bypass normal access arbitration.
 
 ## Set/Get Information  
