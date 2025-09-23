@@ -1,2 +1,4 @@
 *.db
 *.vs
+/examples/cpp/AFMControlAPI_connection_test/AFMContr.39fc2aab
+/examples/cpp/AFMControlAPI_connection_test/x64/Debug
