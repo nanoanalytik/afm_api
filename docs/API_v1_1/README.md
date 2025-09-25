@@ -61,6 +61,7 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [ScannerDeflectionZ](#scannerdeflectionz)
 - [ScannerLimitZ](#scannerlimitz)
 - [ScannerLinesPerSecond](#scannerlinespersecond)
+- [ScannerMicroMetersPerSecond](#scannermicrometerspersecond)
 - [ScannerMode](#scannermode)
 - [ScannerNavigationModeScan](#scannernavigationmodescan)
 - [ScannerNavigationModeProfile](#scannernavigationmodeprofile)
@@ -2247,8 +2248,55 @@ float type as "value" in the GET response
 
 The higher value, the faster measurement is carried out, but the quality of measurement data may be reduced. See the manual for more information. 
 
+# ScannerMicroMetersPerSecond
+<a name="scannermicrometerspersecond"></a>
 
+## Description
 
+Scan speed in micrometers per second.
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+    "command": "set",
+    "object": "ScannerMicroMetersPerSecond",
+    "payload": {
+        "property": "value",
+        "value": 25.0
+    }
+}
+```
+
+### Expected SET Values
+
+float type as "value" in the SET command
+
+## Get Example
+
+```
+{
+    "command": "get",
+    "object": "ScannerMicroMetersPerSecond",
+    "payload": {
+        "property": "value"
+    }
+}
+```
+
+### Expected GET Values
+
+float type as "value" in the GET response
+
+## Notes
+
+The value corresponds to the scan speed in physical units. Higher values result in faster measurements, but may reduce the quality of the acquired data. See the manual for details.
+
+API command available from AFM Control version 2.2.3.
 
 # ScannerMode
 <a name="scannermode"></a>
@@ -2352,7 +2400,7 @@ Only one scanner navigation mode can be set at the same time. If another scanner
 
 The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
 
-API command available from API Control Applicaion version 2.2.1.
+API command available from AFM Control version 2.2.1.
 
 
 # ScannerNavigationModeProfile
@@ -2406,7 +2454,7 @@ Only one scanner navigation mode can be set at the same time. If another scanner
 
 The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
 
-API command available from API Control Applicaion version 2.2.1.
+API command available from AFM Control version 2.2.1.
 
 # ScannerNavigationModePoint
 <a name="scannernavigationmodepoint"></a>
@@ -2460,7 +2508,7 @@ Only one scanner navigation mode can be set at the same time. If another scanner
 
 The default mode is "scan". If the current mode will be reset, the current mode will be set to "scan".
 
-API command available from API Control Applicaion version 2.2.1.
+API command available from AFM Control version 2.2.1.
 
 
 # ScannerTipDistance
