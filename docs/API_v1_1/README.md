@@ -1,12 +1,5 @@
 # API version 1.1
 
-## Change log 
-
-- Added command object “DataSubscription” to manage all data subscriptions
-- Added subscription to AFM system log
-- Added data format for raw measurement data “float”, and scientific notation for the format “txt”
-- Adde APIEcho command for communication testing
-
 # Commands list
 <a name="commands-list"></a>
 
