@@ -37,6 +37,12 @@ Please note that only authenticated API clients are allowed to exchange data wit
 - [APIVersion](#apiversion)
 - [authenticate](#authenticate)
 - [DataSubscription](#datasubscription)
+- [DetectionGainACIn](#detectiongainacin)
+- [DetectionLockInTimeConstant](#detectionlockintimeconstant)
+- [DetectionMaxPeakBandwidth](#detectionmaxpeakbandwidth)
+- [DetectionPeakSelectionMode](#detectionpeakselectionmode)
+- [DetectionResonanceOffset](#detectionresonanceoffset)
+- [DetectionSetpointPercentage](#detectionsetpointpercentage)
 - [FoundResonanceProperties](#foundresonanceproperties)
 - [FrequencySweepStatus](#frequencysweepstatus)
 - [MeasurementData](#measurementdata)
@@ -1263,7 +1269,6 @@ set
 Do not reveal the API-Key to unauthorized people!
 
 
-
 # DataSubscription
 <a name="datasubscription"></a>
 
@@ -1345,6 +1350,300 @@ When a clients requests a subscription to the system log, “channel” and “f
 
 For more information about the subscription to the measurement data, see .
 
+
+# DetectionGainACIn
+<a name="detectiongainacin"></a>
+
+## Description
+
+Programmable AC gain applied to the cantilever detection input; adjust it to match the ADC dynamic range.
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "DetectionGainACIn",
+	"payload": {
+	    "property": "index",
+	    "value": 0
+	}
+}
+```
+
+### Expected SET Values
+
+unsigned int type as "value" in the SET command
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "DetectionGainACIn",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+unsigned int for "index", string for "text"
+
+## Notes
+
+Each entry reports the programmable gain in dB together with the corresponding full-scale voltage range.
+
+API command available from AFM Control version 2.2.4.
+
+# DetectionLockInTimeConstant
+<a name="detectionlockintimeconstant"></a>
+
+## Description
+
+Low-pass time constant used by the lock-in amplifier stage.
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "DetectionLockInTimeConstant",
+	"payload": {
+	    "property": "value",
+	    "value": 1.250
+	}
+}
+```
+
+### Expected SET Values
+
+floating-point value (milliseconds)
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "DetectionLockInTimeConstant",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+floating-point value
+
+## Notes
+
+API command available from AFM Control version 2.2.4.
+
+# DetectionMaxPeakBandwidth
+<a name="detectionmaxpeakbandwidth"></a>
+
+## Description
+
+Maximum accepted resonance peak bandwidth during auto-detection.
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "DetectionMaxPeakBandwidth",
+	"payload": {
+	    "property": "value",
+	    "value": 250.000
+	}
+}
+```
+
+### Expected SET Values
+
+floating-point value (kHz)
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "DetectionMaxPeakBandwidth",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+floating-point value
+
+## Notes
+
+Peaks wider than this threshold are ignored while evaluating sweep results.
+
+API command available from AFM Control version 2.2.4.
+
+# DetectionPeakSelectionMode
+<a name="detectionpeakselectionmode"></a>
+
+## Description
+
+Selects which resonance peak is used after a sweep (first, highest, or best fit).
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "DetectionPeakSelectionMode",
+	"payload": {
+	    "property": "index",
+	    "value": 1
+	}
+}
+```
+
+### Expected SET Values
+
+unsigned int type as "value" in the SET command
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "DetectionPeakSelectionMode",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+unsigned int for "index", string for "text"
+
+## Notes
+
+Typical entries are "first", "highest", and "best"; the exact list depends on the sweep configuration at startup.
+
+API command available from AFM Control version 2.2.4.
+
+# DetectionResonanceOffset
+<a name="detectionresonanceoffset"></a>
+
+## Description
+
+Frequency offset between the actuation drive and the detected resonance.
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "DetectionResonanceOffset",
+	"payload": {
+	    "property": "value",
+	    "value": 15.0
+	}
+}
+```
+
+### Expected SET Values
+
+floating-point value (Hz)
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "DetectionResonanceOffset",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+floating-point value
+
+## Notes
+
+API command available from AFM Control version 2.2.4.
+
+# DetectionSetpointPercentage
+<a name="detectionsetpointpercentage"></a>
+
+## Description
+
+Setpoint expressed as a percentage of the detected resonance amplitude.
+
+## Set/Get Information
+
+set / get
+
+## Set Example
+
+```
+{
+	"command": "set",
+	"object": "DetectionSetpointPercentage",
+	"payload": {
+	    "property": "value",
+	    "value": 70
+	}
+}
+```
+
+### Expected SET Values
+
+integer value (percent)
+
+## Get Example
+
+```
+{
+	"command": "get",
+	"object": "DetectionSetpointPercentage",
+	"payload": {
+	    "property": "value"
+	}
+}
+```
+
+### Expected GET Values
+
+integer value
+
+## Notes
+
+API command available from AFM Control version 2.2.4.
 
 # FoundResonanceProperties
 <a name="foundresonanceproperties"></a>
@@ -2289,7 +2588,7 @@ float type as "value" in the GET response
 
 The value corresponds to the scan speed in physical units. Higher values result in faster measurements, but may reduce the quality of the acquired data. See the manual for details.
 
-API command available from AFM Control version 2.2.3.
+API command available from AFM Control version 2.2.4.
 
 # ScannerMode
 <a name="scannermode"></a>
